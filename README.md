@@ -1,24 +1,53 @@
-# SolidSign API - Example Front-end: XML Renotarization (React)
+# 🇧🇷 SolidSign API - Front-end de Exemplo: Renotarização (ArchiveTimeStamp) XML (React)
 
-Example front-end for adding a new ArchiveTimeStamp (renotarization) to an
-existing XML/XAdES signature. By default it talks to the
-[`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
-example backend, which keeps the API credentials server-side — the
-recommended integration pattern. An optional "Direct to SolidSign API" mode
-lets you call the API straight from the browser, useful for a quick manual
-check, but it exposes the token in the browser.
+## Como funciona
+
+"Via example backend" (padrão) chama `POST /api/xml/renotarize/form` no back-end de exemplo (`http://localhost:8102`), que repassa pra `POST /solidsign/dsig/extending/xml/add-archivetimestamp` da SolidSign API. "Direct to SolidSign API" (opcional) chama a API direto do navegador.
+
+## Requisitos
+
+Rode este back-end de exemplo localmente:
+
+- **Java**: [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
+
+- Um token JWT válido (`POST /solidsign/auth/token`)
+
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+Abra `http://localhost:5173`, preencha o formulário e envie.
+
+## Variáveis do formulário
+
+| Campo | Significado | Default |
+|---|---|---|
+| `mode` | Via backend de exemplo (padrão) ou direto à API | `backend` |
+| `backendUrl` | URL do back-end de exemplo | `http://localhost:8102` |
+| `authorization` | Token JWT (Bearer) | (vazio) |
+| `documents` | Documento(s) a carimbar | (vazio) |
+| `hashAlgorithm` | Algoritmo de hash | `SHA256` |
+| `canonicalizationMethod` | Método de canonicalização | `EXCLUSIVE` |
+| `nodeId / nodeName` | Nó a carimbar (opcional) | (vazio) |
+
+---
+
+# 🇬🇧 SolidSign API - Example Front-end: XML Renotarization (ArchiveTimeStamp) (React)
 
 ## How it works
 
-- **Default mode (backend)**: `POST http://localhost:8102/api/xml/renotarize/form`.
-- **Optional mode (direct)**: `POST {baseUrl}/solidsign/dsig/extending/xml/add-archivetimestamp`, with the token entered in the form.
+"Via example backend" (default) calls `POST /api/xml/renotarize/form` on the example backend (`http://localhost:8102`), which forwards to `POST /solidsign/dsig/extending/xml/add-archivetimestamp` on the SolidSign API. "Direct to SolidSign API" (optional) calls the API straight from the browser.
 
-> **Note:** as of September 2026, direct mode only works if your front-end's origin is on the SolidSign API's CORS allow-list (`solidsign.cors.allowed-origins`, which by default only includes the Portal SolidSign domains). Testing against the production API from `localhost` will get a 403 — use the default (backend) mode instead.
+## Requirements
 
-## Prerequisites
+Run this example backend locally:
 
-1. Run the [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize) backend locally (`mvn spring-boot:run`, default port `8102`) — or, for direct mode, have a valid JWT token.
-2. One or more signed (XAdES) XML files to renotarize.
+- **Java**: [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
+
+- A valid JWT token (`POST /solidsign/auth/token`)
 
 ## Running
 
@@ -27,4 +56,16 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`, upload the XML(s) and renotarize.
+Open `http://localhost:5173`, fill in the form and submit.
+
+## Form fields
+
+| Field | Meaning | Default |
+|---|---|---|
+| `mode` | Via example backend (default) or direct to API | `backend` |
+| `backendUrl` | Example backend URL | `http://localhost:8102` |
+| `authorization` | JWT (Bearer) token | (empty) |
+| `documents` | Document(s) to timestamp | (empty) |
+| `hashAlgorithm` | Hash algorithm | `SHA256` |
+| `canonicalizationMethod` | Canonicalization method | `EXCLUSIVE` |
+| `nodeId / nodeName` | Node to timestamp (optional) | (empty) |
