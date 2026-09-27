@@ -6,9 +6,15 @@
 
 ## Requisitos
 
-Rode este back-end de exemplo localmente:
+Rode **um** destes back-ends de exemplo localmente (portas diferentes — ajuste `backendUrl` no formulário pra combinar):
 
-- **Java**: [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
+- **Java** (porta 8102): [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
+- **C#** (porta 5099): [`exemplo-csharp-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-csharp-integracao-xml-renotarize)
+- **JavaScript** (porta 8101): [`exemplo-javascript-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-javascript-integracao-xml-renotarize)
+- **TypeScript** (porta 8101): [`exemplo-typescript-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-typescript-integracao-xml-renotarize)
+- **Node.js** (porta 3101): [`exemplo-nodejs-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-nodejs-integracao-xml-renotarize)
+- **PHP** (porta 8101): [`exemplo-php-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-php-integracao-xml-renotarize)
+- **Python** (porta 8101): [`exemplo-python-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-python-integracao-xml-renotarize)
 
 - Um token JWT válido (`POST /solidsign/auth/token`)
 
@@ -43,9 +49,15 @@ Abra `http://localhost:5173`, preencha o formulário e envie.
 
 ## Requirements
 
-Run this example backend locally:
+Run **one** of these example backends locally (different ports — adjust `backendUrl` in the form to match):
 
-- **Java**: [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
+- **Java** (port 8102): [`exemplo-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-xml-renotarize)
+- **C#** (port 5099): [`exemplo-csharp-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-csharp-integracao-xml-renotarize)
+- **JavaScript** (port 8101): [`exemplo-javascript-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-javascript-integracao-xml-renotarize)
+- **TypeScript** (port 8101): [`exemplo-typescript-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-typescript-integracao-xml-renotarize)
+- **Node.js** (port 3101): [`exemplo-nodejs-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-nodejs-integracao-xml-renotarize)
+- **PHP** (port 8101): [`exemplo-php-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-php-integracao-xml-renotarize)
+- **Python** (port 8101): [`exemplo-python-integracao-xml-renotarize`](https://github.com/SolidTechSolutions/exemplo-python-integracao-xml-renotarize)
 
 - A valid JWT token (`POST /solidsign/auth/token`)
 
